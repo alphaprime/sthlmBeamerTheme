@@ -1,10 +1,12 @@
 % 	Name		:: 	sthlm Beamer Theme  HEAVILY based on the hsrmbeamer theme (Benjamin Weiss)
-%	Author		:: 	Mark Hendry Olson (mark@hendryolson.com)
+%	Author		:: 	Mark Hendry Olson
 %	Created		::	2013-07-31
-%	Updated		::	June 23, 2015 at 23:58
-%	Version		:: 	1.0.0
-%	Email		:: 	mark@hendryolson.com
-%	Website		:: 	http://hendryolson.com
+%	Updated	    ::	[[December]] 12, 2016 at 07:57:32
+%	Version		:: 	2.0.0
+%	Email		:: 	hendryolson.com@gmail.com
+%	Website		:: 	http://markolson.se
+%	Twitter		:: 	markolsonse
+%	Instagram	:: 	markolsonse
 %
 % 	License		:: 	This file may be distributed and/or modified under the
 %                  	GNU Public License.
@@ -14,176 +16,82 @@
 %					(benjamin.weiss@student.hs-rm.de), which can be found on GitHub
 %					<https://github.com/hsrmbeamertheme/hsrmbeamertheme>.
 %
-%	Contents	::	01. PACKAGE OPTIONS & SETUP
-%					02. PACKAGES & TIKZ
-%					03. COLOR AND FONT THEMES (BEAMER)
-%					04. TITLE PAGE
-%					05. TABLE OF CONTENTS
-%					06. PROGRESS BAR & HEADLINE
-%					07. SECTION PAGES
-%					08. ITEMIZE
-%					09. FOOTLINE
-%					10. CAPTIONS
-%					11. FRAME TITLE
-%					12. IMAGES
-%					13. BLOCKS
+%	Contents	::	PACKAGE OPTIONS & SETUP
+%					PACKAGES & TIKZ
+%					COLOR AND FONT THEMES (BEAMER)
+%					TITLE PAGE
+%					TABLE OF CONTENTS
+%					SECTION PAGES
+%					PROGRESS BAR & HEADLINE
+%					ITEMIZE
+%					FOOTLINE
+%					CAPTIONS
+%					FRAME TITLE
+%					IMAGES
+%					BLOCKS
 
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	01. PACKAGE OPTIONS & SETUP
+%	PACKAGE OPTIONS & SETUP
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \ProvidesPackage{beamerthemesthlm}
 
 \newif\if@useTitleProgressBar
-\@useTitleProgressBartrue
-\DeclareOptionBeamer{noprogressbar}{\@useTitleProgressBarfalse}
+\@useTitleProgressBarfalse
+\DeclareOptionBeamer{progressbar}{\@useTitleProgressBartrue}
 
 \newif\if@protectFrameTitle
 \@protectFrameTitlefalse
 \DeclareOptionBeamer{protectframetitle}{\@protectFrameTitletrue}
 
-\newif\if@dosthlmFooter
-\@dosthlmFooterfalse
-\DeclareOptionBeamer{sthlmFooter}{\@dosthlmFootertrue}
+\newif\if@dofullfooter
+\@dofullfooterfalse
+\DeclareOptionBeamer{fullfooter}{\@dofullfootertrue}
+
+\newif\if@donumfooter
+\@donumfooterfalse
+\DeclareOptionBeamer{numfooter}{\@donumfootertrue}
 
 \newif\if@donewPxFont
 \@donewPxFontfalse
 \DeclareOptionBeamer{newPxFont}{\@donewPxFonttrue}
 
-\newif\if@dosthlmStadFont
-\@dosthlmStadFontfalse
-\DeclareOptionBeamer{sthlmStadFont}{\@dosthlmStadFonttrue}
-
 \newif\if@dovaligncolumns
 \@dovaligncolumnsfalse
 \DeclareOptionBeamer{dovaligncolumns}{\@dovaligncolumnstrue}
 
-\newif\if@doSectionPage
-\@doSectionPagetrue
-\DeclareOptionBeamer{nosectionpage}{\@doSectionPagefalse}
+\newif\if@dosectionpages
+\@dosectionpagesfalse
+\DeclareOptionBeamer{sectionpages}{\@dosectionpagestrue}
 
 \DeclareOptionBeamer{nooffset}{\setlength{\@sthlm@voffset}{0em}}
 
-\DeclareOptionBeamer*{%
-  \PackageWarning{beamerthemesthlm}{Unknown option `\CurrentOption'}%
-}
-
 \newlength{\@sthlm@voffset}
-\setlength{\@sthlm@voffset}{2em}
+\setlength{\@sthlm@voffset}{0em}
 
 \ProcessOptionsBeamer
 \mode<presentation>
 
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	02. PACKAGES & TIKZ
+%	02: REQUIRED PACKAGES
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-\RequirePackage{amsmath}
 \RequirePackage{tikz}
-\RequirePackage{verbatim}
-\RequirePackage{etoolbox}
 \RequirePackage{booktabs}
+\RequirePackage{tabularx}
 \RequirePackage{ragged2e}
 \RequirePackage[yyyymmdd]{datetime}
-\RequirePackage{tabularx}
 \RequirePackage{wasysym}
-\RequirePackage{pgfplots}
-\RequirePackage{listings}
-
 \usetikzlibrary{backgrounds}
 \usetikzlibrary{calc}
 
-\lstnewenvironment{sthlmLatex}
-{\lstset{
-language=[LaTeX]TeX,
-basicstyle=\small\ttfamily,
-keywordstyle=\crBlue\bfseries,
-commentstyle=\crRed,
-numbers=none,
-numberstyle=\tiny\ttfamily,
-mathescape=false,
-escapeinside={\%*}{*)},
-stepnumber=1,
-showspaces=false,
-showstringspaces=false,
-showtabs=false,
-breaklines=true,
-frame=tb,
-framerule=0.5pt,
-tabsize=4,
-framexleftmargin=0.5em,
-framexrightmargin=0.5em,
-xleftmargin=0.5em,
-xrightmargin=0.5em
-}}
-{}
-
-\lstset{
-basicstyle=\small\ttfamily,
-}
-
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	GLOBAL MATH
-%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-\newcommand{\limit}{\displaystyle\lim}
-\newcommand{\impart}{\textrm{Im}}
-\newcommand{\repart}{\textrm{Re}}
-\newcommand{\integer}{\mathbb{Z}}
-\newcommand{\degree}{\ensuremath{{}^{\circ}}\xspace}
-%\newcommand{\degree}{^{\circ}} Depricated by above
-\newcommand{\rad}{\unit{rad}}
-\newcommand{\dd}{\mathrm{d}}
-\newcommand{\dx}{\mathrm{d}x}
-\newcommand{\dy}{\mathrm{d}y}
-\newcommand{\dr}{\mathrm{d}r}
-\newcommand{\dtheta}{\mathrm{d}\theta}
-\newcommand{\dydx}{\dfrac{\mathrm{d}y}{\mathrm{d}x}}
-\newcommand{\dydt}{\dfrac{\mathrm{d}y}{\mathrm{d}t}}
-\newcommand{\dxdt}{\dfrac{\mathrm{d}x}{\mathrm{d}t}}
-\newcommand{\vect}[1]{\boldsymbol{#1}}
-\newcommand{\farg}[1]{{\color{sthlmBlue}{\left[\boldsymbol{#1}\right]}}}
-\newcommand{\sname}[1]{\texttt{#1}}
-\newcommand{\set}[1]{\left\{#1\right\}}
-\newcommand{\inv}{^{-1}}
-\newcommand{\cb}{$\Box$}
-\newcommand{\suchthat}{\;\ifnum\currentgrouptype=16 \middle\fi|\;}
-\newcommand{\ihat}{\hat{\imath}}
-\newcommand{\jhat}{\hat{\jmath}}
-\newcommand{\khat}{\hat{k}}
-
-%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	LISTINGS PACKAGE
-%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-\usepackage{listings}
-\lstset{ %
-language=[LaTeX]TeX,
-basicstyle=\normalsize\ttfamily,
-keywordstyle=,
-numbers=left,
-numberstyle=\tiny\ttfamily,
-stepnumber=1,
-showspaces=false,
-showstringspaces=false,
-showtabs=false,
-breaklines=true,
-frame=tb,
-framerule=0.5pt,
-tabsize=4,
-framexleftmargin=0.5em,
-framexrightmargin=0.5em,
-xleftmargin=0.5em,
-xrightmargin=0.5em
-}
-
-%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	03. COLOR AND FONT THEMES (BEAMER)
+%	COLOR AND FONT THEMES (BEAMER)
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 \usecolortheme{sthlm}
 \usefonttheme{sthlm}
 
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	04. TITLE PAGE
+%	TITLE PAGE
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \def\maketitle{\ifbeamer@inframe\titlepage\else\frame[plain]{\titlepage}\fi}
 
@@ -211,27 +119,49 @@ xrightmargin=0.5em
     \fi%
     \ifx\insertdate\@empty%
     \else%
-    {\usebeamerfont{date}\usebeamercolor[fg]{date}Updated: \insertdate\par\small{\jobname}\par}%
+    {\usebeamerfont{date}\usebeamercolor[fg]{date}\small{Updated: \today} \par}%
     \fi%
     \ifx\insertinstitut\@empty%
     \else%
     \vspace*{5mm}
     {\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
     \fi%
+ 	\hfill \includegraphics[height=20mm]{logo}  \par
+	\vspace*{5mm}
     \vfill
- 	\hfill \includegraphics[height=10mm]{stockholmstad} \hspace{5mm} \includegraphics[height=10mm]{issr} \par
-    \vspace*{5mm}
   \end{minipage}
 }
 
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	05. TABLE OF CONTENTS
+%	TABLE OF CONTENTS
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \setbeamertemplate{section in toc}[sections numbered]
 \setbeamertemplate{subsection in toc}[subsections numbered]
 
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	06. PROGRESS BAR & HEADLINE
+%  SECTION PAGES
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\if@dosectionpages
+\newcommand{\insertsectionHEAD}{%
+  \expandafter\insertsectionHEADaux\insertsectionhead}
+  \newcommand{\insertsectionHEADaux}[3]{\textsc{#3}
+}
+
+\AtBeginSection[]
+{
+  \begingroup
+  \setbeamercolor{background canvas}{parent=palette primary}
+  \begin{frame}[plain]
+    \vspace{2em}\usebeamerfont{section title}
+    \progressbar@sectionprogressbar%
+  \end{frame}
+  \endgroup
+}
+\else
+\fi
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	PROGRESS BAR & HEADLINE
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \makeatletter
 \def\progressbar@sectionprogressbar{}
@@ -246,8 +176,8 @@ xrightmargin=0.5em
 \progressbar@pbht=2pt
 
 % the progress bar
-\def\progressbar@sectionprogressbar{%
-  {\usebeamercolor{palette quaternary}%
+\def\progressbar@sectionprogressbar{
+  {\usebeamercolor{palette quaternary}
     \progressbar@tmpcounta=\insertframenumber
     \progressbar@tmpcountb=\inserttotalframenumber
     \progressbar@tmpdim=\progressbar@pbwd
@@ -256,18 +186,12 @@ xrightmargin=0.5em
     \divide\progressbar@tmpdim by \progressbar@tmpcountb
     \multiply\progressbar@tmpdim by 1000
     \fontsize{1em}{1em}\selectfont
-
     \makebox[\textwidth][c]{
       \begin{tikzpicture}[tight background]
-
         \node[anchor=south west, fg, inner sep=0pt, text width=\progressbar@pbwd] at (0pt, 0pt) {\insertsectionHEAD};
-
-        \draw[anchor=west, fg, fill=fg, inner sep=0pt]
-        (0, -1ex) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
-
-        \draw[anchor=west, bg, fill=bg, inner sep=0pt]
-        (0, -1ex) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
-      \end{tikzpicture}%
+        \draw[anchor=west, fg, fill=fg, inner sep=0pt](0, -1ex) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
+        \draw[anchor=west, bg, fill=bg, inner sep=0pt](0, -1ex) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
+      \end{tikzpicture}
     }
   }
 }
@@ -292,29 +216,7 @@ xrightmargin=0.5em
 \fi
 
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	07. SECTION PAGES
-%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-\if@doSectionPage
-\newcommand{\insertsectionHEAD}{%
-  \expandafter\insertsectionHEADaux\insertsectionhead}
-  \newcommand{\insertsectionHEADaux}[3]{\textsc{#3}
-}
-
-\AtBeginSection[]
-{
-  \begingroup
-  \setbeamercolor{background canvas}{parent=palette primary}
-  \begin{frame}[plain]
-    \vspace{2em}\usebeamerfont{section title}
-    \progressbar@sectionprogressbar%
-  \end{frame}
-  \endgroup
-}
-\else
-\fi
-
-%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	08. ITEMIZE
+%	ITEMIZE
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \setbeamertemplate{itemize item}{$\Circle$}
 \setbeamertemplate{itemize subitem}{$\circ$}
@@ -322,11 +224,11 @@ xrightmargin=0.5em
 \setlength{\parskip}{0.5em}
 
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	09. FOOTLINE
+%	FOOTLINE
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \usenavigationsymbolstemplate{}
 
-\if@dosthlmFooter
+\if@dofullfooter
 \setbeamertemplate{footline}{
 \hbox{
 \begin{beamercolorbox}[wd=0.25\textwidth,dp=1.5ex,leftskip=0.3cm,rightskip=0.3cm]{structure}
@@ -338,7 +240,20 @@ xrightmargin=0.5em
 
 \vspace*{1em}
 
-\hfill Sid \insertframenumber
+\hfill Page \insertframenumber
+\vspace*{1em}
+\end{beamercolorbox}
+}}
+\else%
+\usenavigationsymbolstemplate{}
+\fi%
+
+\if@donumfooter
+\setbeamertemplate{footline}{
+\hbox{
+\begin{beamercolorbox}[wd=1\textwidth, dp=1.5ex,leftskip=0.3cm,rightskip=0.3cm plus1fil]{structure}
+\usebeamerfont{page number in head/foot}
+\hfill \insertframenumber
 \vspace*{1em}
 \end{beamercolorbox}
 }}
@@ -347,12 +262,12 @@ xrightmargin=0.5em
 \fi%
 
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	10. CAPTIONS
+%	CAPTIONS
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \setbeamertemplate{caption label separator}{: }
 
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	11. FRAME TITLE
+%	FRAME TITLE
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \setbeamertemplate{frametitle}{%
 \nointerlineskip
@@ -378,7 +293,7 @@ xrightmargin=0.5em
 }
 
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	12. IMAGES
+%	IMAGES
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \newbox\mytempbox
 \newdimen\mytempdimen
@@ -390,52 +305,57 @@ xrightmargin=0.5em
 }}
 
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	13. BLOCKS
+%	BLOCKS
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-\setbeamertemplate{block begin}
-{
-\setbeamercolor{item}{parent=block body}
-\par\vskip\medskipamount%
-\begin{beamercolorbox}[sep=.5ex,dp=0.6ex,leftskip=0.5ex,rightskip=0.5ex]{block title}
-\usebeamerfont*{block title}\insertblocktitle%
-\end{beamercolorbox}%
-{\parskip0pt\par}%
-{\nointerlineskip\vskip-0.5pt}%
-\usebeamerfont{block body}%
-\begin{beamercolorbox}[sep=.5ex,dp=0.6ex,leftskip=0.5ex,rightskip=0.5ex,vmode]{block body}%
+\newlength{\sthlm@blocksep}
+\newlength{\sthlm@blockadjust}
+\setlength{\sthlm@blocksep}{0.75ex}
+\setlength{\sthlm@blockadjust}{0.25ex}
+\providecommand{\sthlm@strut}{%
+  \vphantom{ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz()}%
 }
-\setbeamertemplate{block end}
-{\end{beamercolorbox}\vskip\smallskipamount}
-
-\setbeamertemplate{block alerted begin}
-{
-\setbeamercolor{item}{parent=block body alerted}
-\par\vskip\medskipamount%
-\begin{beamercolorbox}[sep=.5ex,dp=0.6ex,leftskip=0.5ex,rightskip=0.5ex]{block title alerted}
-\usebeamerfont*{block title alerted}\insertblocktitle%
-\end{beamercolorbox}%
-{\parskip0pt\par}%
-{\nointerlineskip\vskip-0.5pt}%
-\usebeamerfont{block body alerted}%
-\begin{beamercolorbox}[sep=.5ex,dp=0.6ex,leftskip=0.5ex,rightskip=0.5ex,vmode]{block body alerted}%
+\newcommand{\sthlm@block}[1]{
+  \par\vskip\medskipamount%
+  \setlength{\parskip}{2pt}
+  \ifbeamercolorempty[bg]{block title#1}{%
+    \begin{beamercolorbox}[rightskip=0pt plus 4em]{block title#1}}{%
+  \ifbeamercolorempty[bg]{block title}{%
+    \begin{beamercolorbox}[rightskip=0pt plus 4em]{block title#1}%
+  }%
+  {%
+    \begin{beamercolorbox}[
+      sep=\dimexpr\sthlm@blocksep-\sthlm@blockadjust\relax,
+      leftskip=\sthlm@blockadjust,
+      rightskip=\dimexpr\sthlm@blockadjust plus 4em\relax
+    ]{block title#1}%
+  }}%
+      \usebeamerfont*{block title#1}%
+      \sthlm@strut%
+      \insertblocktitle%
+      \sthlm@strut%
+  \end{beamercolorbox}%
+  \nointerlineskip%
+  \ifbeamercolorempty[bg]{block body#1}{%
+    \begin{beamercolorbox}[vmode]{block body#1}}{
+  \ifbeamercolorempty[bg]{block body}{%
+    \begin{beamercolorbox}[vmode]{block body#1}%
+  }{%
+    \begin{beamercolorbox}[sep=\sthlm@blocksep, vmode]{block body#1}%
+    \vspace{-\sthlm@parskip}
+  }}%
+      \usebeamerfont{block body#1}%
+      \setlength{\parskip}{\sthlm@parskip}%
 }
-\setbeamertemplate{block alerted end}
-{\end{beamercolorbox}\vskip\smallskipamount}
+\setbeamertemplate{block begin}{\sthlm@block{}}
+\setbeamertemplate{block alerted begin}{\sthlm@block{ alerted}}
+\setbeamertemplate{block example begin}{\sthlm@block{ example}}
+\setbeamertemplate{block end}{\end{beamercolorbox}\vspace*{0.2ex}}
+\setbeamertemplate{block alerted end}{\end{beamercolorbox}\vspace*{0.2ex}}
+\setbeamertemplate{block example end}{\end{beamercolorbox}\vspace*{0.2ex}}
 
-\setbeamertemplate{block example begin}
-{
-\par\vskip\medskipamount%
-\begin{beamercolorbox}[sep=.5ex,dp=0.6ex,leftskip=0.5ex,rightskip=0.5ex]{block title example}
-\usebeamerfont*{block title example}\insertblocktitle%
-\end{beamercolorbox}%
-{\parskip0pt\par}%
-{\nointerlineskip\vskip-0.5pt}%
-\usebeamerfont{block body example}%
-\begin{beamercolorbox}[sep=.5ex,dp=0.6ex,leftskip=0.5ex,rightskip=0.5ex,vmode]{block body example}%
-}
-\setbeamertemplate{block example end}
-{\end{beamercolorbox}\vskip\smallskipamount}
-
+\newlength{\sthlm@parskip}
+\setlength{\sthlm@parskip}{0.5em}
+\setlength{\parskip}{\sthlm@parskip}
 \mode
 <all>
 

@@ -1,6 +1,3 @@
-%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%	FONT FAMILES
-%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \ProvidesPackage{beamerfontthememsthlm}
 
 % NEWPX FONT (Latex)
@@ -16,18 +13,6 @@
 \RequirePackage[varqu,varl]{inconsolata} % sans serif mono font
 \RequirePackage[bigdelims,vvarbb]{newpxmath} % bb from STIX
 \RequirePackage[cal=boondoxo]{mathalfa} % This package provides a standard means of setting math alphabets associated with the macros \mathcal, \mathbb, \mathfrak
-\fi%
-
-% PROPRIETARY STOCKHOLM STAD FONTS (XeTeX)
-
-\if@dosthlmStadFont%
-% Load sthlmStad Fonts %
-\usefonttheme{professionalfonts}
-\RequirePackage[no-math]{fontspec}
-\defaultfontfeatures{Mapping=tex-text}
-\setsansfont[BoldFont={Stockholm Type Display Bold}]{Stockholm Type Display Regular}
-
-\AtBeginEnvironment{tabular}{\setsansfont[BoldFont={Stockholm Type}, Numbers={Monospaced}]{Stockholm Type}}
 \fi%
 
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -48,14 +33,9 @@
 \setbeamerfont{copyright text}{size=\tiny}
 \setbeamerfont{block title}{series=\sffamily, size=\large}
 \setbeamerfont{block title alerted}{family=\sffamily, size=\large}
-\setbeamerfont{alerted text}{series=\scshape}
 \setbeamerfont{block title example}{family=\sffamily, size=\large}
-\setbeamerfont{example text}{series=\scshape}
 
 \setbeamerfont{caption}{size=\small}
 \setbeamerfont{caption name}{family=\small}
 
 \setbeamerfont{page number in head/foot}{size=\scriptsize}
-
-
-\linespread{1.15}
