@@ -21,6 +21,7 @@
 *.out
 *.xml
 *.snm
+*.zip
 
 *.fdb_latexmk
 
