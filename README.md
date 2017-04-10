@@ -1,7 +1,7 @@
 # sthlmBeamerTheme
 LaTeX Beamer slide deck theme based on HSRM & mTheme
 
-![sthlm Beamer Theme Image](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlmbeamer2_0.png)
+![sthlm Beamer Theme Image](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlmbeamer2_0.png)![sthlm Beamer Theme Image](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_git.png)
 
 [View the pdf Sample](https://github.com/markolsonse/sthlmBeamerTheme/raw/master/20150731-081156-rs2.2B-sthlmBeamerTemplate.pdf)
 ## Documentation: 
