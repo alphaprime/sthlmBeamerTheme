@@ -1,14 +1,14 @@
 # sthlmBeamerTheme
 LaTeX Beamer slide deck theme based on HSRM & mTheme
 
-![sthlm Beamer Theme Image](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlmbeamer2_0.png)
+<p align="center">![sthlm Beamer Theme Image](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlmbeamer2_0.png)</p>
 
 ## Documentation: 
 
 As of December 13, 2016 I have started to write some theme documentation, which can be viewed as a [Github Wiki](https://github.com/markolsonse/sthlmBeamerTheme/wiki).
 
 ## Overleaf: 
-![sthlm Beamer Overleaf Image](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_overleaf.png)
+<p align="center">![sthlm Beamer Overleaf Image](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_overleaf.png)</p>
 
 If you build your decks at Overleaf.com, the theme is available there as well: [https://goo.gl/Z5zrsF](https://goo.gl/Z5zrsF).
 
