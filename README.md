@@ -5,7 +5,7 @@ LaTeX Beamer slide deck theme based on HSRM & mTheme
 
 ## Documentation: 
 
-As of December 13, 2016 I have started to write some theme documentation, which can be found at markolson.se: [https://goo.gl/qmFKyK](https://goo.gl/qmFKyK).
+As of December 13, 2016 I have started to write some theme documentation, which can be viewed as a [Github Wiki](https://github.com/markolsonse/sthlmBeamerTheme/wiki).
 
 ## Overleaf: 
 
@@ -23,5 +23,4 @@ sthlm continues to be a theme that can easily modified through the style files w
 Twitter: @markolsonse
 Instagram: markolsonse
 
-
-
+markolson.se
