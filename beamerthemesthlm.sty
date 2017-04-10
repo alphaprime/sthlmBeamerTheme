@@ -1,8 +1,8 @@
 % 	Name		:: 	sthlm Beamer Theme  HEAVILY based on the hsrmbeamer theme (Benjamin Weiss)
 %	Author		:: 	Mark Hendry Olson
 %	Created		::	2013-07-31
-%	Updated	    ::	[[December]] 12, 2016 at 07:57:32
-%	Version		:: 	2.0.0
+%	Updated	    ::	[[April]] 04, 2017 at 16:26:39
+%	Version		:: 	2.0.2
 %	Email		:: 	hendryolson.com@gmail.com
 %	Website		:: 	http://markolson.se
 %	Twitter		:: 	markolsonse
@@ -79,7 +79,6 @@
 \RequirePackage{tabularx}
 \RequirePackage{ragged2e}
 \RequirePackage[yyyymmdd]{datetime}
-\RequirePackage{wasysym}
 \usetikzlibrary{backgrounds}
 \usetikzlibrary{calc}
 
@@ -144,8 +143,7 @@
 \if@dosectionpages
 \newcommand{\insertsectionHEAD}{%
   \expandafter\insertsectionHEADaux\insertsectionhead}
-  \newcommand{\insertsectionHEADaux}[3]{\textsc{#3}
-}
+  \newcommand{\insertsectionHEADaux}[3]{#3}
 
 \AtBeginSection[]
 {
@@ -218,7 +216,7 @@
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %	ITEMIZE
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-\setbeamertemplate{itemize item}{$\Circle$}
+\setbeamertemplate{itemize item}{$\circledcirc$}
 \setbeamertemplate{itemize subitem}{$\circ$}
 \setbeamertemplate{itemize subsubitem}{$\circ$}
 \setlength{\parskip}{0.5em}
