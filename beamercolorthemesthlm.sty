@@ -5,6 +5,8 @@
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \newif\if@beamer@sthlm@cblock \@beamer@sthlm@cblockfalse \DeclareOptionBeamer{cblock}{\@beamer@sthlm@cblocktrue}
 
+\newif\if@beamer@sthlm@minimal \@beamer@sthlm@minimalfalse \DeclareOptionBeamer{minimal}{\@beamer@sthlm@minimaltrue}
+
 \newif\if@beamer@sthlm@greybg \@beamer@sthlm@greybgfalse \DeclareOptionBeamer{greybg}{\@beamer@sthlm@greybgtrue}
 
 \ProcessOptionsBeamer
@@ -197,6 +199,9 @@
 
 % Page Number
 \setbeamercolor{page number in head/foot}{fg=sthlmDarkGrey} \setbeamercolor{qed}{fg=sthlmGreen} \setbeamercolor{itemize item}{fg=sthlmBlue} \setbeamercolor{itemize subitem}{fg=sthlmRed} \setbeamercolor{itemize subsubitem}{fg=sthlmPurple}
+
+\if@beamer@sthlm@minimal
+\setbeamercolor{palette primary}{fg=sthlmBlue, bg=white} \setbeamercolor{palette secondary}{fg=sthlmDarkGrey,bg=sthlmGrey} \fi
 
 \if@beamer@sthlm@greybg
 
