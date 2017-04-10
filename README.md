@@ -27,38 +27,6 @@ I cannot guarantee that the code used to create the sthlm theme is error free no
 
 sthlm continues to be a theme that can easily modified through the style files without the need for installing a theme package. If you are looking for a packaged theme, then I highly insist that you use mTheme do develop your slide decks. mTheme is still in active development and is available as a latex package with a large user base - it's pretty awesome!
 
-## Screenshots
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-4.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-5.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-6.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-7.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-8.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-11.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-12.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-15.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-16.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-17.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-18.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-19.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-20.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-21.png)
-
-![](https://github.com/markolsonse/sthlmBeamerTheme/blob/master/screenshots/sthlm_2_screenshots-15.png)
-
 Twitter: @markolsonse
 
 Instagram: markolsonse
