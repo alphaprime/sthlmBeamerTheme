@@ -27,8 +27,4 @@ I cannot guarantee that the code used to create the sthlm theme is error free no
 
 sthlm continues to be a theme that can easily modified through the style files without the need for installing a theme package. If you are looking for a packaged theme, then I highly insist that you use mTheme do develop your slide decks. mTheme is still in active development and is available as a latex package with a large user base - it's pretty awesome!
 
-Twitter: @markolsonse
-
-Instagram: markolsonse
-
 markolson.se
